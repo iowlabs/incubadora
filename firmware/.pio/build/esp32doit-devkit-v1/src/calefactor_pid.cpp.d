@@ -146,4 +146,5 @@
  .pio/libdeps/esp32doit-devkit-v1/ContinuousStepper/src/ContinuousStepper/ContinuousStepperImpl.hpp \
  .pio/libdeps/esp32doit-devkit-v1/ContinuousStepper/src/ContinuousStepper/OutputPin.hpp \
  .pio/libdeps/esp32doit-devkit-v1/ContinuousStepper/src/ContinuousStepper/StepperInterfaces.hpp \
+ .pio/libdeps/esp32doit-devkit-v1/LiquidCrystal_I2C/LiquidCrystal_I2C.h \
  .pio/libdeps/esp32doit-devkit-v1/PID/PID_v1.h

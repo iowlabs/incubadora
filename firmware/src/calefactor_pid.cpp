@@ -44,6 +44,7 @@ Actuadores:
 #include "freertos/task.h"
 #include "freertos/semphr.h"
 #include <ContinuousStepper.h>
+#include <LiquidCrystal_I2C.h>
 #include <SPI.h>
 #include <PID_v1.h>
 
@@ -74,9 +75,12 @@ Adafruit_BMP085 bmp;
 // Inicializar el ContinuousStepper
 ContinuousStepper<StepperDriver> stepper;
 
+// Inicializar la pantalla LCD
+LiquidCrystal_I2C lcd(0x27, 16, 2);
+
 // Inicializacion PID
 double Setpoint, Input, Output;
-double Kp = 10, Ki = 1, Kd = 5;  // Valores para el PID
+double Kp = 15, Ki = 2, Kd = 10;  // Valores para el PID
 PID myPID(&Input, &Output, &Setpoint, Kp, Ki, Kd, DIRECT);
 
 
@@ -138,6 +142,14 @@ void setup()
 	ledcSetup(CH_C, 2000, 8);    // Canal 0, 20 kHz, resolución de 8 bits
 	ledcAttachPin(ENB, CH_C);  // Asociar el pin ENA al canal 0
 
+	// Iniciar comunicación de la pantalla
+	lcd.init();
+	lcd.backlight();
+
+	// mensaje inicial
+	lcd.clear();
+	lcd.setCursor(0, 0);
+	lcd.print("LabTecLibre");
 
 	// Inicializa el PID
 	Setpoint = STARTING_SETPOINT; //Setpoint
@@ -167,7 +179,13 @@ void loop()
 	myPID.Compute();
 	pwm =  (int)Output;
 
-  	//analogWrite(ENA, 255);
+	//temp = (int(temp *100.0 + 0.5))/100;
+
+	lcd.setCursor(0,1);
+	lcd.print("Temp:");
+    lcd.print(temp);
+
+    //analogWrite(ENA, 255);
 	//HEAT
 	if(Input < temp_sp)
 	{

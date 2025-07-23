@@ -122,8 +122,8 @@ void setup()
 
 	// Inicializar stepper
 	stepper.begin(PIN_STEP, PIN_DIR);
-	stepper.spin(0);
-	//stepper.spin(int(sps)); // Rota a 1600 pasos por segundo
+	//stepper.spin(0);
+	stepper.spin(int(sps)); // Rota a 1600 pasos por segundo
 	//stepper.spin(200); // Rota a 1600 pasos por segundo
 
 	pinMode(ENA, OUTPUT);
@@ -238,7 +238,7 @@ String pubData()
 
 	doc_tx["time"]  	= timestamp;
 	doc_tx["temp"]  	= temp;
-  doc_tx["temp_sp"] = temp_sp;
+	doc_tx["temp_sp"] = temp_sp;
 	doc_tx["pwm"]  		= pwm;
 	doc_tx["rpm"]  		= rpm;
 

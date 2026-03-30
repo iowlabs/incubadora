@@ -1,0 +1,117 @@
+
+#include <Arduino.h>
+#include <Wire.h>
+#include <OneWire.h>
+#include <LiquidCrystal_I2C.h>
+#include <RotaryEncoder.h>
+#include <ArduinoJson.h>
+#include "freertos/FreeRTOS.h"
+#include "freertos/task.h"
+#include "freertos/semphr.h"
+#include <ContinuousStepper.h>
+#include <SPI.h>
+#include <DallasTemperature.h>
+#include <PID_v1.h>
+#include "Adafruit_SHT31.h"
+#include <WiFi.h>
+#include <HTTPClient.h>
+#include <FS.h>
+#include <ESPmDNS.h>
+#include <PubSubClient.h>
+
+// Pines para el L298N y el control del Peltier
+const int ENA = 25;  // PWM para regular la potencia (opcional)
+const int IN1 = 33;  // Dirección 1
+const int IN2 = 32;  // Dirección 2
+
+
+// Configuración del pin para el sensor DS18B20
+#define ONE_WIRE_BUS 23  // Pin de datos del sensor
+
+// Instancia para OneWire y DallasTemperature
+OneWire oneWire(ONE_WIRE_BUS);
+DallasTemperature sensors(&oneWire);
+
+
+// Variables del PID
+double Setpoint = 37.0;  // Temperatura objetivo (°C)
+double Input;            // Lectura actual de temperatura
+double Output;           // Salida del PID (PWM 0-255)
+
+// Parámetros del PID (ajustables)
+double Kp = 2.0, Ki = 5.0, Kd = 1.0;  // Proporcional, Integral, Derivativo
+
+// Instancia del controlador PID
+PID myPID(&Input, &Output, &Setpoint, Kp, Ki, Kd, DIRECT);
+
+// Configuración de PWM
+const int PWM_FREQ = 1000;  // Frecuencia del PWM (Hz)
+const int PWM_RES = 8;      // Resolución del PWM (8 bits, valores de 0-255)
+const int PWM_CHANNEL = 0;  // Canal PWM
+
+void setup() {
+  // Inicialización del monitor serial
+  Serial.begin(115200);
+
+  // Inicializar el sensor DS18B20
+  sensors.begin();
+
+  // Configurar pines de dirección del L298N como salidas
+  pinMode(IN1, OUTPUT);
+  pinMode(IN2, OUTPUT);
+
+  // Configurar PWM en el pin ENA
+  ledcSetup(PWM_CHANNEL, PWM_FREQ, PWM_RES);
+  ledcAttachPin(ENA, PWM_CHANNEL);
+
+  // Activar el PID en modo automático
+  myPID.SetMode(AUTOMATIC);
+
+  // Limitar la salida del PID entre 0 y 255
+  myPID.SetOutputLimits(0, 255);
+}
+
+void loop() {
+  // Leer la temperatura del sensor
+  sensors.requestTemperatures();
+  Input = sensors.getTempCByIndex(0);  // Obtener la temperatura en °C
+
+  // Validar si la lectura es válida
+  if (Input == DEVICE_DISCONNECTED_C) {
+    Serial.println("Error: Sensor desconectado");
+    return;  // Detener el ciclo si hay un error
+  }
+
+  // Ejecutar el cálculo del PID
+  myPID.Compute();
+
+  // Determinar el modo del Peltier
+  String modo;  // Variable para almacenar el estado
+  if (Input < Setpoint) {
+    // Activar modo Calentar
+    digitalWrite(IN1, HIGH);
+    digitalWrite(IN2, LOW);
+    modo = "Calentando";
+  } else {
+    // Activar modo Enfriar
+    digitalWrite(IN1, LOW);
+    digitalWrite(IN2, HIGH);
+    modo = "Enfriando";
+  }
+
+  // Aplicar la salida del PID como PWM al Peltier
+  ledcWrite(PWM_CHANNEL, (int)Output);
+
+  // Mostrar los datos en la consola serial para depuración
+  Serial.print("Temperatura: ");
+  Serial.print(Input);
+  Serial.print(" °C | Setpoint: ");
+  Serial.print(Setpoint);
+  Serial.print(" °C | Salida PID: ");
+  Serial.print(Output);
+  Serial.print(" | Modo: ");
+  Serial.println(modo);
+
+  // Esperar 1 segundo antes de la próxima lectura
+  delay(1000);
+}

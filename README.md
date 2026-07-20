@@ -4,7 +4,7 @@ This project consists of a low-cost incubator for biotechnology instrumentation.
 
 For this project, a PCB was designed that implements the electronics to control the operation of an incubator. It includes a temperature control and a *shaker* for sample agitation.
 
-The PCB is based on a ESP32 so It can implement remote control and monitoring via Wi-Fi. It also has access to a USB communication interface for parameter configuration, curve generation, and data acquisition. It also features a simple interface that uses an LCD display and a rotary encoder as an alternative control method.
+The PCB is based on a ESP32 so It can implement remote control and monitoring via Wi-Fi or BLE. It also has access to a USB communication interface for parameter configuration, curve generation, and data acquisition. It also features a simple interface that uses an LCD display and a rotary encoder as an alternative control method.
 
 ## Features.
 
@@ -15,6 +15,7 @@ The PCB is based on a ESP32 so It can implement remote control and monitoring vi
 - Simple User Interface
 - WiFi Remote Control Capability
 - Temperature profile programming
+- easy assembly
 
 ### Hardware Features
 

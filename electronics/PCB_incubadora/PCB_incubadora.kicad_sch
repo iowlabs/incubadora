@@ -327,6 +327,177 @@
 			)
 			(embedded_fonts no)
 		)
+		(symbol "Connector_Generic:Conn_01x03"
+			(pin_names
+				(offset 1.016)
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "J"
+				(at 0 5.08 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "Conn_01x03"
+				(at 0 -5.08 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" "~"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" "Generic connector, single row, 01x03, script generated (kicad-library-utils/schlib/autogen/connector/)"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_keywords" "connector"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_fp_filters" "Connector*:*_1x??_*"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "Conn_01x03_1_1"
+				(rectangle
+					(start -1.27 3.81)
+					(end 1.27 -3.81)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type background)
+					)
+				)
+				(rectangle
+					(start -1.27 2.667)
+					(end 0 2.413)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(rectangle
+					(start -1.27 0.127)
+					(end 0 -0.127)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(rectangle
+					(start -1.27 -2.413)
+					(end 0 -2.667)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(pin passive line
+					(at -5.08 2.54 0)
+					(length 3.81)
+					(name "Pin_1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at -5.08 0 0)
+					(length 3.81)
+					(name "Pin_2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at -5.08 -2.54 0)
+					(length 3.81)
+					(name "Pin_3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
 		(symbol "Connector_Generic:Conn_01x04"
 			(pin_names
 				(offset 1.016)
@@ -4635,6 +4806,12 @@
 		(uuid "69a82379-3a53-4ca7-abbc-511c82467f51")
 	)
 	(junction
+		(at 227.33 55.88)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "6fd5d194-89da-4168-be71-319ce0953639")
+	)
+	(junction
 		(at 35.56 158.75)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -4719,6 +4896,16 @@
 			(type default)
 		)
 		(uuid "04438d5e-53e5-438f-bf08-30eac45a840b")
+	)
+	(wire
+		(pts
+			(xy 224.79 58.42) (xy 218.44 58.42)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "050155ca-4ac2-427e-b1e2-d120a5d3a60e")
 	)
 	(wire
 		(pts
@@ -4819,6 +5006,16 @@
 			(type default)
 		)
 		(uuid "2a896062-19d6-424c-baef-f80151cf9bb2")
+	)
+	(wire
+		(pts
+			(xy 227.33 63.5) (xy 224.79 63.5)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "2ccc12cb-79fb-4efb-bfbf-c1935475f1c2")
 	)
 	(wire
 		(pts
@@ -5202,6 +5399,16 @@
 	)
 	(wire
 		(pts
+			(xy 227.33 55.88) (xy 218.44 55.88)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "89b387b6-080a-4b68-a10b-4908fd57dbba")
+	)
+	(wire
+		(pts
 			(xy 40.64 177.8) (xy 39.37 177.8)
 		)
 		(stroke
@@ -5352,6 +5559,16 @@
 	)
 	(wire
 		(pts
+			(xy 224.79 63.5) (xy 224.79 58.42)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a87cd04e-9547-409f-bbc1-24b8f04e1ec8")
+	)
+	(wire
+		(pts
 			(xy 130.81 171.45) (xy 130.81 172.72)
 		)
 		(stroke
@@ -5419,6 +5636,16 @@
 			(type default)
 		)
 		(uuid "c1862cd9-71a6-4bad-b298-6901889f10ce")
+	)
+	(wire
+		(pts
+			(xy 232.41 55.88) (xy 227.33 55.88)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "c1b0e97b-bbd8-48c8-b0da-d8001358c08d")
 	)
 	(wire
 		(pts
@@ -6202,6 +6429,28 @@
 			)
 		)
 	)
+	(global_label "TS_PIN"
+		(shape input)
+		(at 227.33 63.5 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "47b63f07-1230-406f-a79a-2f89bf9e96a3")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 236.6652 63.5 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+	)
 	(global_label "HEATER_PWM"
 		(shape input)
 		(at 33.02 109.22 180)
@@ -6597,6 +6846,28 @@
 			)
 		)
 	)
+	(global_label "3V3"
+		(shape input)
+		(at 232.41 55.88 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "99bd09f6-c265-4c3c-b352-d2f360623b19")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 238.9028 55.88 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+	)
 	(global_label "SDA"
 		(shape input)
 		(at 69.85 101.6 0)
@@ -6856,6 +7127,28 @@
 		(uuid "bf7f27ce-979e-4a18-99d1-5ca3beafb1ff")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
 			(at 21.4472 227.33 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "TS_PIN"
+		(shape input)
+		(at 33.02 114.3 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "c26b4187-c18e-47d1-af96-ffaa56588324")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 23.6848 114.3 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9701,6 +9994,79 @@
 		)
 	)
 	(symbol
+		(lib_id "Connector_Generic:Conn_01x03")
+		(at 213.36 58.42 0)
+		(mirror y)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "682cd2f1-2d86-41e6-a6eb-2f1ab6e96aa9")
+		(property "Reference" "J3"
+			(at 210.82 57.1499 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "Conn_01x03"
+			(at 210.82 59.6899 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 213.36 58.42 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 213.36 58.42 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Generic connector, single row, 01x03, script generated (kicad-library-utils/schlib/autogen/connector/)"
+			(at 213.36 58.42 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "88a8e2f7-4707-4b9b-8438-47447828635e")
+		)
+		(pin "3"
+			(uuid "c8d30d74-442b-42b6-98c7-8c1382792582")
+		)
+		(pin "1"
+			(uuid "8871b8dd-95d8-44bd-bd7b-7136b415f871")
+		)
+		(instances
+			(project ""
+				(path "/b844d572-68cb-4934-b2c1-6e579f2c4014"
+					(reference "J3")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "power:GND")
 		(at 33.02 224.79 270)
 		(unit 1)
@@ -10882,6 +11248,76 @@
 		)
 	)
 	(symbol
+		(lib_id "Device:R")
+		(at 227.33 59.69 180)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "b777d06f-ff36-48b5-9793-e1909f34d2f9")
+		(property "Reference" "R7"
+			(at 229.87 58.4199 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Value" "4.7K"
+			(at 229.87 60.9599 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
+			(at 229.108 59.69 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 227.33 59.69 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Resistor"
+			(at 227.33 59.69 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "893fa136-4b78-45a1-a5df-3c15e5e04592")
+		)
+		(pin "2"
+			(uuid "081b32d8-fc06-42f6-bed4-44ffd45ccfa1")
+		)
+		(instances
+			(project "PCB_incubadora"
+				(path "/b844d572-68cb-4934-b2c1-6e579f2c4014"
+					(reference "R7")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "power:+5V")
 		(at 68.58 152.4 90)
 		(unit 1)
@@ -11463,6 +11899,72 @@
 			(project "PCB_incubadora"
 				(path "/b844d572-68cb-4934-b2c1-6e579f2c4014"
 					(reference "#PWR016")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 218.44 60.96 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "db2b8ed0-2c9c-424e-96b9-bd857c9c23a1")
+		(property "Reference" "#PWR025"
+			(at 218.44 67.31 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 218.44 66.04 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 218.44 60.96 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 218.44 60.96 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 218.44 60.96 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "8d7de52c-2a47-4b28-8c45-1534249f3c08")
+		)
+		(instances
+			(project "PCB_incubadora"
+				(path "/b844d572-68cb-4934-b2c1-6e579f2c4014"
+					(reference "#PWR025")
 					(unit 1)
 				)
 			)
